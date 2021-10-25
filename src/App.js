@@ -5,7 +5,7 @@ import Form from "./components/Form";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [todos, setTodos] = useState("");
+  const [todos, setTodos] = useState([]);
 
   // Insert todos on form submission
   const handleSubmit = (todo) => {
@@ -16,7 +16,7 @@ function App() {
     <div>
       <header>Todo List</header>
       <Form onSubmit={handleSubmit} />
-      <TodoList />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }

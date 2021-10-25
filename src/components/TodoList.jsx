@@ -1,14 +1,15 @@
 // Import Components
-import Todo from './Todo'
+import Todo from "./Todo";
 
-const TodoList = () => {
-    return (
-        <div className="todo-container">
-            <ul className="todo-list">
-                <Todo/>
-            </ul>
-        </div>
-    )
-}
+const TodoList = ({ todos, setTodos }) => {
+    
+  return (
+    <div className="todo-container">
+      <ul className="todo-list">
+     {todos.map((todo) => <Todo key={todo.id} todo={todo} />)}
+      </ul>
+    </div>
+  );
+};
 
-export default TodoList
+export default TodoList;
