@@ -1,9 +1,8 @@
-
-const Todo = ({todo, onDelete}) => {
+const Todo = ({ todo, onDelete, onUpdate }) => {
   return (
     <div className="todo">
       <li className="todo-item">{todo.text}</li>
-      <button className="complete-btn ">
+      <button onClick={() => onUpdate(todo.id)} className="complete-btn ">
         <i className="fas fa-check"></i>
       </button>
       <button onClick={() => onDelete(todo.id)} className="trash-btn">
